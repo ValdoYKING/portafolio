@@ -1,11 +1,68 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Welcome from "../components/Welcome.astro";
+import "../assets/styles/principal.css";
+import Layout from "../layouts/Layout.astro";
+import Portada from "../components/Portada.astro";
+import Profile from "../components/Profile.astro";
+import Modal from "../components/Modal.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Skills from "../components/Skills.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Timeline from "../components/Timeline.astro";
+import Footer from "../components/Footer.astro";
+import imgConferexpo from "../assets/conferexpo.png";
+import imgAccesio from "../assets/accesio_app.jpg";
+import Incognito from "../assets/incognito_app.png";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Osvaldo Villalba | Portafolio">
+  <!-- Portada -->
+  <Portada />
+
+  <!-- Sección de perfil -->
+  <Profile />
+
+  <!-- modal -->
+  <Modal openModalId="myModal"/>
+
+  <!-- AboutME -->
+  <AboutMe />
+
+  <!-- Sección de habilidades -->
+  <Skills />
+
+  <!-- Sección de proyectos -->
+  <div
+    class="w-11/12 max-w-6xl mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+  >
+    <h2 class="col-span-full text-2xl font-bold mb-4">Proyectos</h2>
+    <ProjectCard
+      title="AccesIO App"
+      description="App movil desarrollada para android"
+      imgSrc={imgAccesio.src}
+      details="App movil de credencial virtual para entradas y salidas"
+      link="/accesio"
+    />
+    <ProjectCard
+      title="Incognito App"
+      description="Plataforma web para evaluar servicios"
+      imgSrc={Incognito.src}
+      details="Creación de una plataforma web que permitirá evaluar, dar sugerencias y opinar sobre los servicios que ofrece una institución"
+      link="/incognito"
+    />
+    <ProjectCard
+      title="ConferExpo"
+      description="Aplicación web para la gestión de eventos"
+      imgSrc={imgConferexpo.src}
+      details="Aplicación web para la gestión de eventos y conferencias"
+      link="/conferexpo"
+    />
+    <!-- Añade más ProjectCard según sea necesario -->
+  </div>
+
+  <!-- Timeline -->
+  <Timeline />
+
+  <!-- Zona de contacto -->
+  <Footer />
 </Layout>
