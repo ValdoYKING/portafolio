@@ -1,0 +1,279 @@
+/* styles.css */
+body {
+    font-family: 'Josefin Sans', serif;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2d3748; /* Fondo gris oscuro */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    color: #e2e8f0; /* Texto claro */
+  }
+  
+  .about-me-container:hover {
+    transform: translateY(-10px);
+  }
+  
+  .about-me-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .about-me-content {
+    line-height: 1.6;
+    text-align: left;
+  }
+  
+  .about-me-section {
+    margin-bottom: 1rem;
+  }
+  
+  .about-me-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+  
+  .about-me-icon {
+    font-size: 2rem;
+    color: #63b3ed; /* Color azul claro */
+  }
+  
+  .about-me-icon:hover {
+    color: #2b6cb0; /* Color azul oscuro */
+  }
+  
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1rem;
+  }
+  
+  .photo-gallery img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .photo-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo más oscuro */
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    /* Fondo del modal */
+    color: #fff;
+    /* Texto blanco */
+    margin: 10% auto;
+    /* Mover un poco hacia arriba */
+    padding: 20px;
+    border: none;
+    /* Sin borde */
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+    animation: modalopen 0.5s;
+    /* Animación de apertura */
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.close {
+    color: #bbb;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos adicionales */
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de habilidades */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background-color: #4a5568;
+    /* Color oscuro de fondo */
+    color: #fff;
+    /* Texto blanco */
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores específicos para cada habilidad */
+.skill-html:hover {
+    background-color: #e44d26;
+    /* HTML color */
+}
+
+.skill-css:hover {
+    background-color: #264de4;
+    /* CSS color */
+}
+
+.skill-javascript:hover {
+    background-color: #f7df1e;
+    /* JavaScript color */
+    color: #000;
+    /* Texto negro para mejor contraste */
+}
+
+.skill-react:hover {
+    background-color: #61dafb;
+    /* React color */
+    color: #000;
+    /* Texto negro para mejor contraste */
+}
+
+.skill-nodejs:hover {
+    background-color: #339933;
+    /* Node.js color */
+}
+
+.skill-php:hover {
+    background-color: #787cb5;
+    /* PHP color */
+}
+
+.skill-kotlin:hover {
+    background-color: #A97BFF;
+    /* Kotlin color */
+}
+
+.skill-python:hover {
+    background-color: #306998;
+    /* Python color */
+}
+
+.skill-git:hover {
+    background-color: #F05032;
+    /* Git color */
+}
+
+.skill-docker:hover {
+    background-color: #2496ED;
+    /* Docker color */
+}
+
+.skill-jetpack:hover {
+    background-color: #4285F4; /* Jetpack Compose color */
+}
+
+.skill-astro:hover {
+    background-color: #FF5A1F;
+    /* Astro color */
+}
+
+.skill-firebase:hover {
+    background-color: #FFCA28;
+    /* Firebase color */
+}
+
+.skill-express:hover {
+    background-color: #000000;
+    /* Express color */
+}
+
+.skill-mongodb:hover {
+    background-color: #47A248;
+    /* MongoDB color */
+}
+
+.skill-teamwork:hover {
+    background-color: #FFD700;
+    /* Teamwork color */
+}
+
+.skill-problemsolving:hover {
+    background-color: #FF6347;
+    /* Problem Solving color */
+}
+
+.skill-adaptation:hover {
+    background-color: #4682B4;
+    /* Adaptation color */
+}
+

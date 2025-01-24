@@ -1,0 +1,211 @@
+---
+import logoAccesio from "../assets/logo_accesio.png";
+---
+
+<div class="timeline-container">
+  <h2 class="text-2xl font-bold mb-4">Línea del tiempo</h2>
+  <div class="timeline">
+    <!-- Primer elemento -->
+    <div class="timeline-item left pastel-blue">
+      <div class="timeline-content">
+        <h3>Desarrollador Fullstack • Grupo Fecha</h3>
+        <span>Enero 2020 - Octubre 2021</span>
+        <p>
+          Lideré la gestión y desarrollo de un sistema ERP llamado "SUINDI",
+          utilizando frameworks como CodeIgniter y Laravel. Implementé
+          facturación electrónica CFDI, generé reportes en PDF, diseñé
+          dashboards interactivos y desarrollé más de 20 funcionalidades clave.
+        </p>
+        <!-- <img src={logoAccesio.src} alt="Graduation" class="icon" /> -->
+      </div>
+    </div>
+
+    <!-- Segundo elemento -->
+    <div class="timeline-item right pastel-green">
+      <div class="timeline-content">
+        <h3>Proyecto AccesIO</h3>
+        <span>Agosto 2024</span>
+        <p>
+          Diseñé y desarrollé una aplicación de gestión de accesos
+          institucionales con Kotlin, Jetpack Compose y Firebase, priorizando
+          interfaces intuitivas y funcionalidad en tiempo real.
+        </p>
+        <!-- <img src={logoAccesio.src} alt="Developer" class="icon" /> -->
+      </div>
+    </div>
+
+    <!-- Tercer elemento -->
+    <div class="timeline-item left pastel-blue">
+      <div class="timeline-content">
+        <h3>Proyecto ConferExpo</h3>
+        <span>Octubre 2024</span>
+        <p>
+          Desarrollé una plataforma web para la gestión de eventos y
+          conferencias, utilizando Flask para el backend y MongoDB como base de
+          datos, garantizando escalabilidad y rendimiento.
+        </p>
+        <!-- <img src={logoAccesio.src} alt="Project" class="icon" /> -->
+      </div>
+    </div>
+
+    <!-- Cuarto elemento -->
+    <div class="timeline-item right pastel-green">
+      <div class="timeline-content">
+        <h3>Proyecto Incognito</h3>
+        <span>Noviembre 2024</span>
+        <p>
+          Implementé una plataforma web para la evaluación de servicios,
+          integrando Node.js y MongoDB para manejar datos dinámicos y plantillas
+          personalizadas para las vistas.
+        </p>
+        <!-- <img src={logoAccesio.src} alt="Developer" class="icon" /> -->
+      </div>
+    </div>
+
+    <!-- Quinto elemento -->
+    <div class="timeline-item left pastel-blue">
+      <div class="timeline-content">
+        <h3>Estadía Profesional • Digital Jaguar</h3>
+        <span>Septiembre 2024 - Diciembre 2024</span>
+        <p>
+          Realicé mi estadía profesional desarrollando el sistema ERP "Auto
+          Glass", enfocado en la gestión de inventarios y ventas, utilizando
+          CodeIgniter y plantillas personalizadas para optimizar la experiencia
+          del usuario.
+        </p>
+        <!-- <img src={logoAccesio.src} alt="Project" class="icon" /> -->
+      </div>
+    </div>
+
+    <!-- Sexto elemento -->
+    <div class="timeline-item right pastel-green">
+      <div class="timeline-content">
+        <h3>Presentación de disertación</h3>
+        <span>Enero 2025</span>
+        <p>
+          Presenté mi disertación sobre el desarrollo del proyecto "Auto Glass"
+          en la Universidad Tecnológica de Nezahualcóyotl, destacando la
+          solución de problemas complejos en el manejo de datos empresariales.
+        </p>
+        <!-- <img src={logoAccesio.src} alt="Developer" class="icon" /> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Estilos para la línea de tiempo en zigzag */
+  .timeline-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+  }
+
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .timeline-item.right {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-content {
+    background: #4a5568; /* Fondo oscuro */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-10px);
+  }
+
+  .timeline-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffd700; /* Color amarillo dorado */
+  }
+
+  .timeline-content span {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+    color: #f58300; /* Color naranja oscuro */
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: #4a5568;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .timeline-item.left::before {
+    left: calc(100% - 20px);
+  }
+
+  .timeline-item.right::before {
+    right: calc(100% - 20px);
+  }
+
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: calc(100% + 20px);
+    background: #4a5568;
+    top: calc(50% + 10px);
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 2px dashed #4a5568;
+  }
+
+  .timeline-item:last-child::after {
+    display: none;
+  }
+
+  /* Colores pastel */
+  .pastel-green .timeline-content {
+    background-color: #6ca79c; /* Verde oscuro menta */
+  }
+
+  .pastel-blue .timeline-content {
+    background-color: #5b8b95; /* Azul oscuro desaturado */
+  }
+</style>

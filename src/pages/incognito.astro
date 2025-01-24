@@ -1,0 +1,26 @@
+---
+import ProjectLayout from '../layouts/ProjectLayout.astro';
+import imgIncognito from '../assets/incognito_app.png';
+import imgIncognito2 from '../assets/incognito2.png';
+import imgIncognito3 from '../assets/imgincognito3.png';
+---
+
+<ProjectLayout title="Incognito">	
+	<div class="carousel">
+		<img src={imgIncognito.src} alt="Incognito1" class="image" />
+		<img src={imgIncognito2.src} alt="Incognito1" class="image" />
+		<img src={imgIncognito3.src} alt="Incognito1" class="image" />
+		<button class="carousel-button left"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-badge-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 17h6l-4 -5l4 -5h-6l-4 5z" /></svg></button>
+		<button class="carousel-button right"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 7h-6l4 5l-4 5h6l4 -5z" /></svg></button>
+	  </div>
+	<div class="description">
+	  <p>Incognito es una plataforma web desarrollada para la evaluación y gestión de servicios. Implementada con Node.js y MongoDB, permite manejar datos dinámicos y plantillas personalizadas para las vistas.</p>
+	  <h2 class="text-2xl font-bold mt-4">Características Principales</h2>
+	  <ul class="list-disc list-inside">
+		<li>Evaluación de servicios en tiempo real</li>
+		<li>Reportes detallados y análisis de datos</li>
+		<li>Dashboard de administración intuitivo</li>
+		<li>Seguridad y privacidad de datos</li>
+	  </ul>
+	</div>
+  </ProjectLayout>
