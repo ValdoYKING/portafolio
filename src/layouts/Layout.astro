@@ -1,7 +1,7 @@
 ---
 // Layout.astro
 const { title, children } = Astro.props;
-import codeCircle from '../assets/code-circle-2.svg';
+import codeCircle from "../assets/code-circle-2.svg";
 ---
 
 <!doctype html>
@@ -9,7 +9,7 @@ import codeCircle from '../assets/code-circle-2.svg';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-	<link rel="icon" href={codeCircle.src}>
+    <link rel="icon" href={codeCircle.src} />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,11 +28,10 @@ import codeCircle from '../assets/code-circle-2.svg';
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
-

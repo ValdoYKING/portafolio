@@ -2,7 +2,6 @@
 //Profile component
 import MexicoFlag from "../assets/bandera-de-mexico.png";
 import imgLogo from "../assets/devaldo.jpg";
-
 ---
 
 <!-- Sección de perfil -->
@@ -20,8 +19,9 @@ import imgLogo from "../assets/devaldo.jpg";
 
   <!-- Nombre y descripción -->
   <h2 class="text-xl font-bold mt-3">Osvaldo Villalba Mendoza</h2>
-  <p class="text-gray-600 dark:text-gray-400 text-center mt-2">
-    Desarrollador web y entusiasta del código creativo. 🚀
+  <p id="role" class="text-gray-600 dark:text-gray-400 text-center mt-2">
+    Desarrollador <span id="changing-word">web</span> y entusiasta del código creativo.
+    🚀
   </p>
 
   <!-- Información adicional -->
@@ -100,3 +100,51 @@ import imgLogo from "../assets/devaldo.jpg";
     </div>
   </div>
 </div>
+
+<script>
+  const words = ["web", "backend", "móvil"];
+  let index = 0;
+  const changingWordElement = document.getElementById("changing-word");
+
+  const typeWord = (word: string, callback: () => void) => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (changingWordElement) {
+        if (changingWordElement) {
+          if (changingWordElement) {
+            changingWordElement.textContent = word.slice(0, i);
+          }
+        }
+      }
+      i++;
+      if (i > word.length) {
+        clearInterval(interval);
+        setTimeout(callback, 1000); // Espera 1 segundo antes de borrar
+      }
+    }, 100);
+  };
+
+  const deleteWord = (callback: () => void) => {
+    let word = changingWordElement ? changingWordElement.textContent : "";
+    let i = word ? word.length : 0;
+    const interval = setInterval(() => {
+      if (changingWordElement && word) {
+        changingWordElement.textContent = word.slice(0, i);
+      }      
+      i--;
+      if (i < 0) {
+        clearInterval(interval);
+        callback();
+      }
+    }, 100);
+  };
+
+  const cycleWords = () => {
+    deleteWord(() => {
+      index = (index + 1) % words.length;
+      typeWord(words[index], cycleWords);
+    });
+  };
+
+  typeWord(words[index], cycleWords);
+</script>
