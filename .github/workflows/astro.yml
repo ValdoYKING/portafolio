@@ -12,34 +12,40 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Cambiado a ubuntu-22.04 para mayor estabilidad
     steps:
-      - name: Checkout your repository using git
+      # Paso 1: Clonar el repositorio
+      - name: Checkout your repository
         uses: actions/checkout@v4
       
+      # Paso 2: Configurar Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 20 # Cambia a la versión que requiere tu proyecto
       
+      # Paso 3: Instalar dependencias
       - name: Install dependencies
         run: npm install
       
+      # Paso 4: Construir el proyecto Astro
       - name: Build your Astro project
         run: npm run build
       
+      # Paso 5: Subir los artefactos de la carpeta `dist`
       - name: Upload your site
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist # Carpeta de salida predeterminada de Astro
+          path: dist # Asegúrate de que tu carpeta de salida sea `dist`
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
-      pages: write # Permiso necesario para GitHub Pages
+      pages: write
       id-token: write
     steps:
+      # Paso 6: Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
