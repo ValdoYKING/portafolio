@@ -281,3 +281,12 @@ body {
     /* Adaptation color */
 }
 
+.skill-fastapi:hover {
+    background-color: #009688;
+    /* FastAPI color */
+}
+
+.skill-flask:hover {
+    background-color: #000000;
+    /* Flask color */
+}
