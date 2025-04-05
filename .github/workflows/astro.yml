@@ -2,50 +2,50 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      # Paso 1: Clonar el repositorio
       - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      # Paso 2: Configurar Node.js
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-      
-      # Paso 3: Instalar dependencias
+          node-version: '16'
+
       - name: Install dependencies
-        run: npm ci
-      
-      # Paso 4: Construir el proyecto con Astro
-      - name: Build Astro project
-        run: npx astro build
-      
-      # Paso 5: Subir artefactos de la carpeta `dist`
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4  # Update to the latest version
         with:
-          path: dist
+          name: build
+          path: build/
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    needs: build
+
     steps:
-      # Paso 6: Desplegar a GitHub Pages
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4  # Ensure this is also up to date
+        with:
+          name: build
+          path: build/
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
