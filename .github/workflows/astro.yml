@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-22.04 # Especificamos la versión para evitar el cambio a ubuntu-24.04
+    runs-on: ubuntu-22.04 # Versión de Ubuntu
 
     steps:
     - name: Checkout code
@@ -27,11 +27,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist # Directorio de salida generado por Astro
-
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v4 # Actualizado a v4 para evitar la deprecación
-      with:
-        name: github-pages
-        path: dist
+        personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # Usa el token personalizado
+        publish_dir: dist
