@@ -5,6 +5,6 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
     integrations: [tailwind()],
-    site: 'https://valdoyking.is-a.dev',
-    base: '/portafolio',
+    site: 'https://valdoyking.github.io',
+    /* base: '/portafolio', */
 });
